@@ -1,0 +1,889 @@
+/* ---------------------------------- */
+/* 无忧字库模仿版 CSS 样式 */
+/* ---------------------------------- */
+
+:root {
+    --color-primary: #007bff; /* 主蓝色调，模仿原网站的链接和按钮颜色 */
+    --color-text: #333;
+    --color-light-gray: #f8f8f8;
+    --color-border: #eee;
+    --max-width: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: white;
+}
+
+/* --- 通用布局 --- */
+h1, h2, h3 {
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--color-text);
+}
+
+h2 {
+    font-size: 2.2em;
+    padding-bottom: 10px;
+    margin-bottom: 40px;
+}
+
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+.feature-item{
+background-color: #FFFFFF;
+border-radius: 10px;
+padding: 10px;
+}
+/* --- 按钮样式 --- */
+.primary-button {
+    display: inline-block;
+    background-color: #28a745; /* 绿色背景，模仿图片中的按钮颜色 */
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    margin-top: 40px; /* 根据您之前调整的间距，可以保持或再次调整 */
+}
+
+.primary-button:hover {
+    background-color: #218838; /* 悬停时颜色略深，提供反馈 */
+}
+
+/* --- 头部导航 --- */
+.imitation-header {
+    border-bottom: 1px solid var(--color-border);
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.header-content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo-link {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+.main-nav a {
+    color: var(--color-text);
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 1em;
+}
+
+.main-nav a:hover {
+    color: var(--color-primary);
+}
+
+/* --- 首页主宣传区 --- */
+.hero-section {
+    /* **关键修改：设置相对定位，让绝对定位的背景只能在它内部** */
+    position: relative; 
+    
+    /* 移除原来的浅灰色背景色，以便显示动态背景 */
+    background-color: var(--color-light-gray); 
+    padding: 100px 0 0px 0;    /*  保持内容内边距不变 */
+    min-height: 5vh;
+    overflow: hidden; /* 确保动画溢出部分被隐藏 */
+}
+
+.hero-section h1 {
+    font-size: 3em;
+    margin-bottom: 15px;
+}
+
+/* --- 热门字体区 --- */
+.hot-fonts-section {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.font-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.font-card {
+    width: 260px;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    overflow: hidden;
+    text-align: left;
+    transition: box-shadow 0.3s;
+}
+
+.font-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.font-preview {
+    height: 160px; /* 固定预览区域高度 */
+    background-color: #f1f1f1; /* 备用背景色，如果图片加载失败 */
+    display: flex; /* 使用 Flexbox 进行图片居中 */
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* 隐藏超出容器的部分，防止图片溢出 */
+}
+
+.font-preview img {
+    width: 100%; /* 图片宽度填充父容器 */
+    height: 100%; /* 图片高度填充父容器 */
+    object-fit: cover; /* 关键属性：裁剪图片以填充容器，保持图片比例不失真 */
+    display: block; /* 移除图片底部可能存在的空白间隙 */
+}
+
+.font-card h3 {
+    margin: 15px 20px 10px;
+    font-size: 1.2em;
+}
+
+.font-link {
+    display: inline-block;
+    margin: 0 20px 20px;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* --- 优势介绍区 --- */
+.features-section {
+    background-color: var(--color-light-gray);
+}
+
+.feature-list {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    text-align: left;
+}
+
+.feature-item {
+    flex: 1;
+}
+
+.feature-item h3 {
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+
+/* --- 常见问题区 --- */
+.faq-section {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--color-light-gray);
+}
+
+.faq-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.faq-list li {
+    border-bottom: 1px solid var(--color-border);
+    padding: 15px 0 15px 20px;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: #FFFFFF;
+    margin-bottom: 10px;
+}
+
+/* --- 底部信息 --- */
+.imitation-footer {
+    padding: 40px 20px;
+    background-color: #333;
+    color: #bbb;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.footer-note {
+    margin-top: 10px;
+}
+
+/* --- 响应式设计 --- */
+@media (max-width: 1000px) {/* ...existing code... */
+
+.font-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 每行四个卡片 */
+    gap: 30px;
+}
+
+/* 响应式调整 */
+@media (max-width: 1200px) {
+    .font-grid {
+        grid-template-columns: repeat(3, 1fr); /* 宽度不足时每行三个 */
+    }
+}
+
+@media (max-width: 900px) {
+    .font-grid {
+        grid-template-columns: repeat(2, 1fr); /* 更小屏幕时每行两个 */
+    }
+}
+
+@media (max-width: 600px) {
+    .font-grid {
+        grid-template-columns: 1fr; /* 最小屏幕时每行一个 */
+    }
+}
+    .header-content {
+        flex-direction: column;
+    }
+    .main-nav {
+        margin-top: 15px;
+    }
+    .feature-list {
+        flex-direction: column;
+    }
+    .font-grid {
+        gap: 20px;
+    }
+}
+@media (max-width: 600px) {
+    .font-card {
+        width: 100%; /* 小屏幕时卡片占满宽度 */
+    }
+    .hero-section h1 {
+        font-size: 2em;
+    }
+}
+/* --- 附加样式：搜索栏 --- */
+
+.search-bar-container {
+    max-width: 600px; /* 限制搜索框宽度 */
+    margin: 0 auto 40px; /* 居中并增加下方间距 */
+}
+
+#fontSearchInput {
+    width: 100%;
+    padding: 12px 20px;
+    border: 2px solid var(--color-border);
+    border-radius: 4px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+#fontSearchInput:focus {
+    border-color: var(--color-primary); /* 聚焦时使用主色调边框 */
+    outline: none;
+}
+
+/* 隐藏不匹配的字体卡片 */
+.font-card.hidden {
+    display: none;
+}
+/* --- 附加样式：全部字体页面标题结构 --- */
+
+/* 包装器：用于将 H2 和 P 标签放在同一行并居中 */
+.list-header-wrapper {
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: baseline; /* 确保 H2 和 P 标签底部对齐 */
+    margin-bottom: 40px; /* 整体标题下方的间距 */
+}
+
+/* 字体数量提示：实现小字和指定颜色 */
+.font-count-note {
+    font-size: 1.2em; /* 略大于普通文本，但小于 H2 */
+    color: #999999; /* 您要求的字体颜色 */
+    margin-left: 10px; /* 与 H2 之间留出间距 */
+    font-weight: 400; /* 不需要加粗 */
+    font-family: var(--font-body);
+}
+
+/* 调整 H2 的边距以适应新的结构 */
+.list-header-wrapper h2 {
+    margin-bottom: 0; 
+    padding-bottom: 0;
+    border-bottom: none; /* 移除 H2 自带的下划线，让整体更干净 */
+}
+
+/* 如果您希望 H2 标题有下划线，可以给整个包装器添加下划线 */
+/* .list-header-wrapper {
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+} */
+ /* --- 附加样式：搜索栏和分类按钮 --- */
+
+/* 搜索栏容器调整，以容纳搜索图标 */
+.search-bar-container {
+    max-width: 600px;
+    margin: 0 auto 30px; /* 调整下方间距 */
+    position: relative; /* 用于定位搜索图标 */
+}
+
+#fontSearchInput {
+    width: 100%;
+    padding: 12px 40px 12px 20px; /* 增加右侧内边距给图标留位置 */
+    border: 2px solid var(--color-border);
+    border-radius: 25px; /* 更圆润的搜索框 */
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#fontSearchInput:focus {
+    border-color: #a0cfff; /* 聚焦时的蓝色边框 */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* 聚焦时的蓝色阴影 */
+    outline: none;
+}
+
+.search-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 1.1em;
+    pointer-events: none; /* 让鼠标事件穿透图标，点击到输入框 */
+}
+
+
+/* 字体分类按钮组 */
+.font-categories {
+    margin-bottom: 50px; /* 与字体网格之间的间距 */
+    display: flex; /* 弹性布局 */
+    justify-content: center; /* 按钮居中 */
+    flex-wrap: wrap; /* 按钮过多时自动换行 */
+    gap: 15px; /* 按钮之间的间距 */
+}
+
+.category-button {
+    padding: 10px 25px;
+    border: 1px solid #ddd;
+    border-radius: 20px; /* 圆润的按钮 */
+    background-color: white;
+    color: var(--color-text);
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    outline: none; /* 移除点击时的轮廓线 */
+}
+
+.category-button:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.category-button.active {
+    background-color: #28a745; /* 选中的按钮使用绿色 */
+    color: white;
+    border-color: #00BC7D;
+}
+
+.category-button.active:hover {
+    background-color: #218838; /* 选中状态悬停时颜色稍微变深 */
+    border-color: #00BC7D;
+    color: white;
+}
+
+/* 隐藏不匹配的字体卡片 */
+.font-card.hidden {
+    display: none;
+}
+/* 此样式应在您的 CSS 文件中已存在 */
+.highlight-green {
+    color: #28a745; /* 您指定的深绿色 */
+    font-weight: 700; 
+}
+/* --- 动态背景样式 (为 Hero Section 定制) --- */
+.background--custom {
+    background-color: #FFFFFF;
+    /* 关键修改：覆盖父容器的尺寸 */
+    width: 100%; 
+    height: 20%; 
+    
+    position: absolute;
+    overflow: hidden;
+    z-index: -2; /* 确保背景在所有内容之下 */
+    top: 0;
+    left: 0;
+}
+
+canvas#heroCanvas { /* 注意：我们把 ID 改名为 heroCanvas */
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%; /* 覆盖整个背景区域 */
+    
+    /* 保持原有的动画缩放和平移效果，您可以根据实际效果微调 */
+    transform: rotate(0deg) scale(1.5) translateY(0%); 
+    
+    /* 动画颜色参数保持不变 */
+    --gradient-color-1: #99F8BC;
+    --gradient-color-2: #E3F5FF;
+    --gradient-color-3: #AAF5AA;
+    --gradient-color-4: #E1F0D9;
+    --gradient-speed: 0.000006;
+}
+
+/* 新增：确保 Hero 内容在 Canvas 之上 */
+.hero-content {
+    position: relative;
+    z-index: 1; /* 确保内容位于背景之上 */
+}
+/* 为了适应 FAQ/版权声明页面，添加一些专门的排版样式 */
+.faq-content-container {
+    max-width: 900px; /* 内容最大宽度 */
+    margin: 40px auto; /* 居中显示，上下留白 */
+    padding: 30px; /* 内部填充 */
+    background-color: white; 
+    border-radius: 8px; /* 圆角 */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 轻微阴影 */
+    text-align: left;
+}
+
+.faq-content-container h1 {
+    font-size: 2em;
+    font-weight: 250;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--color-text);
+}
+
+.faq-content-container h2 {
+    font-size: 1.25em; /* 调整标题大小使其更像正文标题 */
+    font-weight: 700;
+    color: #333; /* 标题颜色调整为深色 */
+    margin-top: 20px; /* 缩小了 section 之间的间距 */
+    margin-bottom: 10px; /* 缩小了标题与内容之间的间距 */
+    /* 移除边框和左填充，使其像参考图中的样式 */
+    border-left: none; 
+    padding-left: 0; 
+}
+
+.faq-content-container p, .faq-content-container li {
+    font-size: 1em;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 10px; /* 缩小了段落和列表项之间的间距 */
+}
+
+/* 恢复默认列表结构 */
+.faq-content-container ul.styled-list {
+    list-style: disc; /* 使用默认的点状列表符号 */
+    padding-left: 1.5em; /* 添加左侧填充以显示列表符号 */
+}
+
+.faq-content-container ul.styled-list li {
+    background-color: transparent; /* 移除背景色 */
+    padding: 0; /* 移除填充 */
+    margin-bottom: 5px;
+    border-radius: 0;
+}
+
+.faq-content-container strong {
+    color: #333;
+    font-weight: 700;
+}
+/* FAQ 页面边距样式 */
+.faq-content-container {
+    max-width: 800px; /* 限制内容宽度 */
+    margin: 40px auto; /* 上下边距 40px，水平居中 */
+    padding: 30px; /* 内部填充 30px */
+    background-color: white; /* 背景色为白色 */
+    border-radius: 8px; /* 圆角边框 */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 添加轻微阴影 */
+    text-align: left; /* 左对齐内容 */
+}
+
+/* FAQ 标题样式 */
+.faq-content-container h1 {
+    font-size: 2em; /* 标题字体大小 */
+    font-weight: 700; /* 加粗标题 */
+    text-align: center; /* 标题居中 */
+    margin-bottom: 30px; /* 标题与内容之间的间距 */
+    color: var(--color-text); /* 使用全局文本颜色 */
+}
+
+/* FAQ 小标题样式 */
+.faq-content-container h2 {
+    font-size: 1.25em; /* 小标题字体大小 */
+    font-weight: 700; /* 加粗小标题 */
+    text-align: left; /* 标题左对齐 */
+    color: #333; /* 深色小标题 */
+    margin-top: 20px; /* 小标题上方间距 */
+    margin-bottom: 10px; /* 小标题下方间距 */
+}
+/* d1 样式 */
+.d1 {
+    margin-bottom: 40px; /* 每个部分的下方间距 */
+    padding: 5px; /* 内部填充 */
+    border-radius: 8px; /* 圆角边框 */
+}
+
+/* d2 样式 */
+.d2 {
+    margin-bottom: 40px;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+/* d3 样式 */
+.d3 {
+    margin-bottom: 40px;
+    padding: 5px;
+    border-radius: 8px;
+}
+/* d4 样式 */
+.d4 {
+    margin-bottom: 40px;
+    padding: 5px;
+    border-radius: 8px;
+}
+/* FAQ 段落和列表样式 */
+.faq-content-container p,
+.faq-content-container li {
+    font-size: 1em; /* 正文字体大小 */
+    line-height: 1.7; /* 行高 */
+    text-align: left; 
+    color: #686868; /* 正文颜色 */
+    margin-bottom: 10px; /* 段落和列表项之间的间距 */
+}
+
+/* FAQ 列表样式 */
+.faq-content-container ul.styled-list {
+    list-style: disc; /* 使用圆点列表符号 */
+    padding-left: 1.5em; /* 左侧填充 */
+}
+
+.faq-content-container ul.styled-list li {
+    margin-bottom: 5px; /* 列表项之间的间距 */
+}
+/* --- 常见问题区 FAQ 样式调整 --- */
+
+/* 列表项的整体容器 */
+.faq-list li {
+    /* 保持原有的边框和间距 */
+    border-bottom: 1px solid var(--color-border);
+    padding: 0 0 0 20px; /* 移除底部 padding，让答案控制 */
+    font-weight: 500;
+    cursor: pointer;
+    background-color: #FFFFFF;
+    margin-bottom: 10px;
+    
+    /* 新增：为收缩动画做准备 */
+    overflow: hidden; 
+}
+
+/* 问题标题样式 */
+.faq-question {
+    /* 使标题占据整个宽度，并保持可点击区域 */
+    display: block; 
+    padding: 15px 0; /* 标题的上下填充 */
+    margin: 0; /* 移除 h3 默认的 margin */
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--color-text);
+    position: relative; /* 用于定位图标 */
+}
+
+.faq-question::after {
+    /* 简单箭头图标 */
+    content: '+'; 
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+    color: #999;
+    transition: transform 0.3s ease;
+}
+
+/* 激活状态（展开）时，旋转箭头 */
+.faq-question.active::after {
+    content: '−'; /* 展开时显示减号 */
+    transform: translateY(-50%) rotate(0deg);
+}
+
+/* 答案内容区域 */
+.faq-answer {
+    /* 默认隐藏，高度为 0 */
+    max-height: 0; 
+    overflow: hidden;
+    transition: max-height 0.4s ease-out; /* 关键：平滑过渡效果 */
+}
+
+/* 答案内容的内边距，确保展开时内容与底部有间距 */
+.faq-answer p {
+    padding-bottom: 15px;
+    margin: 0; /* 移除 p 标签默认边距 */
+    line-height: 1.6;
+    color: #555;
+}
+
+/* 激活状态（展开）时，设置一个足够大的高度 */
+.faq-answer.active {
+    /* 这是一个足够大的值，确保所有内容都能展开 */
+    max-height: 500px; 
+}
+/* --- 头部导航样式调整 --- */
+
+/* --- 头部导航 --- */
+.imitation-header {
+    border-bottom: 1px solid var(--color-border);
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+/* ... (header-content 样式不变) ... */
+
+.logo-link {
+    /* 关键修改：使用 Flexbox 实现图片和文字在同一行并垂直居中 */
+    display: flex;
+    align-items: center; /* 垂直居中对齐 */
+    
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+/* 新增：Logo 图片样式 */
+.header-logo {
+    height: 30px; /* 控制 Logo 的高度，您可以根据图片实际尺寸调整 */
+    width: auto; /* 保持图片比例 */
+    margin-right: 10px; /* Logo 与文字之间添加间距 */
+    object-fit: contain; 
+}
+/* ... (main-nav 样式不变) ... */
+/* --- 字体详情页布局 (font_detail.html) --- */
+
+.detail-page-container {
+    max-width: 1400px; /* 详情页更宽 */
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.detail-title {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: left; /* 标题左对齐 */
+    padding-left: 20px;
+}
+
+.detail-content-wrapper {
+    display: flex;
+    gap: 40px; /* 主内容和侧边栏之间的间距 */
+    align-items: flex-start; /* 顶部对齐 */
+}
+
+/* 左侧边导航 */
+.detail-sidebar {
+    width: 180px;
+    flex-shrink: 0; /* 不压缩 */
+    position: sticky; /* 侧边栏吸顶 */
+    top: 20px;
+    padding-top: 10px;
+}
+
+.font-nav h3 {
+    font-size: 1em;
+    font-weight: 400;
+    color: #999;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.font-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.font-nav li a {
+    display: block;
+    padding: 8px 10px;
+    margin-bottom: 5px;
+    color: var(--color-text);
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: left;
+}
+
+.font-nav li a.active, .font-nav li a:hover {
+    background-color: #e6f7ff; /* 浅蓝色背景 */
+    color: var(--color-primary);
+}
+
+/* 右侧信息卡片 */
+.detail-info-card {
+    width: 300px; /* 信息卡片固定宽度 */
+    flex-shrink: 0;
+    position: sticky;
+    top: 20px;
+}
+
+.info-card {
+    background-color: #f7f9fb;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.info-card h3 {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+    font-size: 0.95em;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.info-item .label {
+    color: #777;
+}
+
+.info-item .value {
+    font-weight: 600;
+    color: #333;
+}
+
+.download-button {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #28a745; /* 绿色下载按钮 */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+}
+
+.download-button:hover {
+    background-color: #218838;
+}
+
+.collect-button {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #ddd;
+    color: var(--color-text);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: border-color 0.3s;
+}
+
+.collect-button:hover {
+    border-color: var(--color-primary);
+}
+
+/* 中间主要内容区域 */
+.font-main-content {
+    flex-grow: 1;
+    min-width: 0; /* 允许 Flex 项缩小 */
+}
+
+.detail-section {
+    padding-bottom: 40px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--color-border);
+    text-align: left;
+}
+
+.detail-section:last-child {
+    border-bottom: none;
+}
+
+.detail-section h2 {
+    font-size: 1.4em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--color-primary); /* 标题使用主色调 */
+    border-bottom: 2px solid var(--color-primary);
+    display: inline-block;
+    padding-bottom: 5px;
+    }
+    /* ---------------------------------- */
+/* 无忧字库模仿版 CSS 样式 */
+/* ---------------------------------- */
+
+:root {
+/* ... (其它变量和基础样式不变) ... */
+}
+
+/* ... (通用布局和按钮样式不变) ... */
+
+/* --- 头部导航 --- */
+.imitation-header {
+    border-bottom: 1px solid var(--color-border);
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.header-content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo-link {
+    /* 关键修改：使用 Flexbox 实现图片和文字在同一行并垂直居中 */
+    display: flex;
+    align-items: center; /* 垂直居中对齐 */
+    
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+/* 新增：Logo 图片样式 */
+.header-logo {
+    height: 30px; /* 控制 Logo 的高度，您可以根据图片实际尺寸调整 */
+    width: auto; /* 保持图片比例 */
+    margin-right: 10px; /* Logo 与文字之间添加间距 */
+    object-fit: contain; 
+}
+
+
+.main-nav a {
+/* ... (main-nav 样式不变) ... */
+}
+/* ... (其它样式不变) ... */
