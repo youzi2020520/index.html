@@ -916,3 +916,57 @@ canvas#heroCanvas { /* 注意：我们把 ID 改名为 heroCanvas */
     padding: 15px 20px;
 }
 /* ... 其它样式保持不变 ... */
+/* --- 新增：赞助/支持区域样式 --- */
+.sponsor-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: white; /* 与下方 footer 区分 */
+}
+
+.sponsor-section h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.sponsor-section p {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.qr-code-container {
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    gap: 80px; /* 二维码之间的较大间距 */
+    flex-wrap: wrap; /* 适应小屏幕 */
+}
+
+.qr-code-item {
+    text-align: center;
+    max-width: 200px;
+}
+
+.qr-code {
+    width: 100%; /* 充满父容器 */
+    height: auto;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.qr-caption {
+    font-size: 1.1em;
+    font-weight: 500;
+    margin-top: 15px;
+    color: var(--color-text);
+}
+
+/* 响应式调整 */
+@media (max-width: 600px) {
+    .qr-code-container {
+        gap: 40px; /* 减小间距 */
+    }
+    .qr-code-item {
+        max-width: 150px;
+    }
+}
