@@ -976,3 +976,53 @@ canvas#heroCanvas { /* 注意：我们把 ID 改名为 heroCanvas */
     height: 60px; 
     width: 100%;
 }
+/* 详情页内容包装器：启用三列布局 */
+.detail-content-wrapper {
+    display: flex;
+    gap: 30px; /* 列之间的间距 */
+    padding: 30px 0;
+    align-items: flex-start; /* 顶部对齐 */
+}
+
+/* 字体主内容区域：包含简介、展示、版权说明 (左侧/中间列) */
+.font-main-content {
+    flex-grow: 1; /* 占据剩余的大部分空间 */
+    /* 关键：限制主内容区域的最大宽度，确保在超宽屏幕上不会失控 */
+    max-width: 700px; 
+}
+
+/* 字体侧边栏/信息卡区域 (右侧列) */
+.detail-sidebar,
+.detail-info-card {
+    /* 为侧边栏和信息卡设置固定宽度，例如 250px */
+    flex-shrink: 0;
+    width: 250px; 
+}
+
+
+/* --- 字体展示图片宽度控制 (核心) --- */
+
+/* 图片容器：用于包裹图片，并可以添加样式如阴影或圆角 */
+.preview-image-container {
+    overflow: hidden; 
+    border-radius: 6px;
+    /* 移除掉图片预览区域可能存在的内边距，确保图片顶格显示 */
+    padding: 0; 
+}
+
+/* 实际图片：确保图片宽度填充其父容器 (.preview-image-container) */
+.full-width-image {
+    width: 100%; /* 关键：图片宽度填充父容器 */
+    height: auto; /* 保持图片比例 */
+    display: block;
+}
+
+/* 字体简介段落样式，确保其与图片容器对齐 */
+.description-text,
+.license-p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #555;
+    text-align: justify; /* 保持文本对齐 */
+    /* 确保这些文本也继承了 .font-main-content 的宽度 */
+}
