@@ -887,3 +887,32 @@ canvas#heroCanvas { /* 注意：我们把 ID 改名为 heroCanvas */
 /* ... (main-nav 样式不变) ... */
 }
 /* ... (其它样式不变) ... */
+/* --- 头部导航 --- */
+.imitation-header {
+    /* --- 新增：固定头部栏 --- */
+    position: fixed; /* 固定在视口 */
+    top: 0; /* 固定在顶部 */
+    left: 0; /* 充满左侧 */
+    width: 100%; /* 充满整个宽度 */
+    z-index: 1000; /* 确保它位于页面所有内容之上 */
+    
+    /* --- 修改：实现白色磨砂玻璃效果 --- */
+    background-color: rgba(255, 255, 255, 0.85); /* 半透明白色背景 */
+    backdrop-filter: blur(8px); /* 关键：背景模糊效果 */
+    -webkit-backdrop-filter: blur(8px); /* 兼容性支持 */
+    
+    /* 保持原有的边框和阴影 */
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.header-content {
+    /* 保持不变 */
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+/* ... 其它样式保持不变 ... */
