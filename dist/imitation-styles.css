@@ -970,3 +970,9 @@ canvas#heroCanvas { /* 注意：我们把 ID 改名为 heroCanvas */
         max-width: 150px;
     }
 }
+/* --- 占位符样式 --- */
+.header-spacer {
+    /* 这个值决定了内容从哪里开始，请根据您的头部栏高度设置 */
+    height: 60px; 
+    width: 100%;
+}
