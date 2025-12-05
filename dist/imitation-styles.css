@@ -11,8 +11,8 @@
 }
 
 * {
-    margin: 50;
-    padding: 50;
+    margin: 10;
+    padding: 10;
     box-sizing: border-box;
 }
 
@@ -47,22 +47,6 @@ section {
     width: 100%;
 }
 
-/* --- 按钮样式 --- */
-.primary-button {
-    display: inline-block;
-    background-color: #28a745;
-    color: white;
-    padding: 12px 30px;
-    text-decoration: none;
-    border-radius: 30px;
-    font-weight: 500;
-    transition: background-color 0.3s;
-    margin-top: 40px;
-}
-
-.primary-button:hover {
-    background-color: #218838;
-}
 
 /* --- 头部导航 (固定 & 磨砂玻璃效果) --- */
 .imitation-header {
@@ -116,72 +100,7 @@ section {
     color: var(--color-primary);
 }
 
- /* --- 首页主宣传区 (图片背景) --- */
-.hero-section {
-    position: relative; 
-    text-align: center; 
-    
-    /* **修复：将背景图片样式移到全局区域，不再受 600px 限制** */
-    background-image: url('images/hero-bg.png'); /* 请确保您的图片路径和文件名正确 */
-    background-size: cover; 
-    background-position: center center; 
-    background-repeat: no-repeat; 
-
-    /* 建议增加最小高度以展示背景图 */
-    min-height: 500px; 
-    padding: 100px 0 0px 0;    
-    overflow: hidden; 
-}
-
-/* **新增：背景蒙版，以确保文字可读性 (模仿截图效果)** */
-.hero-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* 模仿截图的浅绿色柔和渐变效果 */
-    background: linear-gradient(135deg, rgba(230, 247, 255, 0.2), rgba(231, 252, 232, 0.1));
-    z-index: 0; /* 确保蒙版在背景之上，内容之下 */
-}
-
-
-.hero-content {
-    position: relative;
-    z-index: 1; /* 确保内容在蒙版和背景之上 */
-    max-width: 800px; 
-    margin: 0 auto; 
-}
-
-/* 动画定义：缓慢移动渐变色 */
-@keyframes gradientShift {
-    0% {
-        background-position: 0% 50%; 
-    }
-    50% {
-        background-position: 100% 50%; 
-    }
-    100% {
-        background-position: 0% 50%; 
-    }
-}
-
-.hero-content {
-    position: relative;
-    z-index: 1; /* 确保内容在背景之上 */
-    max-width: 800px; 
-    margin: 0 auto; 
-}
-
-.hero-section h1 {
-    font-size: 4em;
-    margin-bottom: 10px;
-}
-.highlight-green {
-    color: #28a745; 
-    font-weight: 700; 
-}
+ 
 
 /* --- 热门字体区 --- */
 .hot-fonts-section {
@@ -251,7 +170,73 @@ section {
     font-weight: 500;
     /* text-align: left; <--- 移除此行，由父级 .font-card 继承 */
 }
+/* --- 按钮样式 --- */
+.primary-button {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    margin-top: 40px;
+    
+    /* **关键修改：设置 position 和 z-index 确保按钮位于最顶层** */
+    position: relative; 
+    z-index: 20; /* 确保它高于背景蒙版(z-index: 0)和 hero-content(z-index: 10) */
+}
 
+.primary-button:hover {
+    background-color: #218838;
+}
+
+/* --- 首页主宣传区 (图片背景) --- */
+.hero-section {
+    position: relative; 
+    z-index: 1; /* 确保按钮位于其他元素之上 */
+    
+    /* **修复：将背景图片样式移到全局区域，不再受 600px 限制** */
+    background-image: url('images/hero-bg.png'); /* 请确保您的图片路径和文件名正确 */
+    background-size: cover; 
+    background-position: center center; 
+    background-repeat: no-repeat; 
+
+    /* 建议增加最小高度以展示背景图 */
+    min-height: 500px; 
+    padding: 100px 0 0px 0;    
+    overflow: hidden; 
+}
+
+/* **新增：背景蒙版，以确保文字可读性 (模仿截图效果)** */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* 模仿截图的浅绿色柔和渐变效果 */
+    background: linear-gradient(135deg, rgba(230, 247, 255, 0.2), rgba(231, 252, 232, 0.1));
+    z-index: 0; /* 确保蒙版在背景之上，内容之下 */
+}
+
+
+.hero-content {
+    position: relative;
+    z-index: 1; /* 确保内容在蒙版和背景之上 */
+    max-width: 800px; 
+    margin: 0 auto; 
+}
+
+.hero-section h1 {
+    font-size: 4em;
+    margin-bottom: 10px;
+}
+.highlight-green {
+    color: #28a745; 
+    font-weight: 700; 
+}
 /* --- 优势介绍区 --- */
 .features-section {
     background-color: var(--color-light-gray);
