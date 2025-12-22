@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全部字体 - 无忧字库 (模仿版)</title>
+    <link rel="stylesheet" href="imitation-styles.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+   
+        </div>
+    <script>
+        let currentCategory = "全部"; // 追踪当前选中的分类
+
+        // 页面加载完成后立即执行一次筛选，确保“全部”分类正确显示
+        document.addEventListener('DOMContentLoaded', () => {
+            attachCategoryButtonListeners();
+            filterFonts(); // 初始加载时执行一次筛选，确保分类和数量正确
+        });
+
+        function attachCategoryButtonListeners() {
+            const categoryButtons = document.querySelectorAll('.category-button');
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // 移除所有按钮的 active 类
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    // 为当前点击的按钮添加 active 类
+                    this.classList.add('active');
+                    // 更新当前分类
+                    currentCategory = this.dataset.category;
+                    // 重新筛选字体
+                    filterFonts();
+                });
+            });
+        }
+
+        function filterFonts() {
+            let searchInput = document.getElementById('fontSearchInput');
+            let filterText = searchInput.value.toUpperCase(); // 获取搜索文本
+            
+            let cards = document.querySelectorAll('.font-grid .font-card');
+            let displayedCount = 0; // 计数器，记录当前显示的字体数量
+
+            cards.forEach(card => {
+                let fontName = card.querySelector('h3').textContent.toUpperCase();
+                let cardCategory = card.dataset.category; // 获取卡片的分类
+
+                let matchesSearch = (fontName.indexOf(filterText) > -1);
+                let matchesCategory = (currentCategory === "全部" || cardCategory === currentCategory);
+
+                if (matchesSearch && matchesCategory) {
+                    card.classList.remove('hidden');
+                    displayedCount++;
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            // 更新显示的字体数量
+            document.getElementById('displayedFontCount').textContent = displayedCount;
+        }
+    </script>
+
+</body>
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    </head>
+<body>
+
+    <header class="imitation-header">
+        <div class="header-content">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo.png" alt="无忧字库 Logo" class="header-logo">
+                无忧字库
+            </a>
+            </div>
+    </header>
+
+    <section id="all-fonts-list" class="hot-fonts-section">
+        
+        <div class="list-header-wrapper">
+            <h2>全部字体</h2>
+            <p class="font-count-note">共 <span id="displayedFontCount">7</span> 款字体</p>
+        </div>
+        
+        <div class="search-bar-container">
+            <input type="text" id="fontSearchInput" placeholder="搜索字体..." onkeyup="filterFonts()">
+            <span class="search-icon">🔍</span>
+        </div>
+        
+        <div class="font-categories">
+            <button class="category-button active" data-category="全部">全部</button>
+            <button class="category-button" data-category="黑体">黑体</button>
+            <button class="category-button" data-category="宋体">宋体</button>
+            <button class="category-button" data-category="复古">复古</button>
+        </div>
+
+        <div class="font-grid">
+            <div class="font-card" data-category="黑体"> 
+                <div class="font-preview">
+                    <img src="images/font-fang-yuan-ti.webp" alt="阿里妈妈方圆体封面">
+                </div>
+                <h3>阿里妈妈方圆体</h3>
+                <a href="font_detail.html?font=alimama-fangyuan-ti" class="font-link">查看详情</a>
+            </div>
+
+            <div class="font-card" data-category="黑体"> 
+                <div class="font-preview">
+                    <img src="images/font-di-yi-hei.webp" alt="得意黑字体封面">
+                </div>
+                <h3>得意黑</h3>
+                <a href="#" class="font-link">查看详情</a>
+            </div>
+
+            <div class="font-card" data-category="黑体"> 
+                <div class="font-preview">
+                    <img src="images/font-shu-hei-ti.webp" alt="阿里妈妈数黑体封面">
+                </div>
+                <h3>阿里妈妈数黑体</h3>
+                <a href="#" class="font-link">查看详情</a>
+            </div>
+
+            <div class="font-card" data-category="黑体"> 
+                <div class="font-preview">
+                    <img src="images/font-pu-hui-ti.webp" alt="阿里巴巴普惠体 2.0 封面">
+                </div>
+                <h3>阿里巴巴普惠体 2.0</h3>
+                <a href="#" class="font-link">查看详情</a>
+            </div>
+
+            <div class="font-card" data-category="宋体"> 
+                <div class="font-preview">
+                    <img src="images/font-si-yuan-song.webp" alt="思源宋体封面">
+                </div>
+                <h3>思源宋体</h3>
+                <a href="#" class="font-link">查看详情</a>
+            </div>
+
+            <div class="font-card" data-category="复古"> 
+                <div class="font-preview">
+                    <img src="images/font-dao-li-ti.webp" alt="阿里妈妈刀隶体封面">
+                </div>
+                <h3>阿里妈妈刀隶体</h3>
+                <a href="#" class="font-link">查看详情</a>
+            </div>
+            
+            <div class="font-card" data-category="黑体"> 
+                <div class="font-preview">
+                    <img src="images/font-si-yuan-hei.webp" alt="思源黑体封面">
+                </div>
+                <h3>思源黑体</h3>
+                <a href="#" class="font-link">查看详情</a>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        let currentCategory = "全部"; // 追踪当前选中的分类
+
+        // 页面加载完成后立即执行一次筛选，确保“全部”分类正确显示
+        document.addEventListener('DOMContentLoaded', () => {
+            attachCategoryButtonListeners();
+            filterFonts(); // 初始加载时执行一次筛选，确保分类和数量正确
+        });
+
+        function attachCategoryButtonListeners() {
+            const categoryButtons = document.querySelectorAll('.category-button');
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // 移除所有按钮的 active 类
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    // 为当前点击的按钮添加 active 类
+                    this.classList.add('active');
+                    // 更新当前分类
+                    currentCategory = this.dataset.category;
+                    // 重新筛选字体
+                    filterFonts();
+                });
+            });
+        }
+
+        function filterFonts() {
+            let searchInput = document.getElementById('fontSearchInput');
+            let filterText = searchInput.value.toUpperCase(); // 获取搜索文本
+            
+            let cards = document.querySelectorAll('.font-grid .font-card');
+            let displayedCount = 0; // 计数器，记录当前显示的字体数量
+
+            cards.forEach(card => {
+                let fontName = card.querySelector('h3').textContent.toUpperCase();
+                let cardCategory = card.dataset.category; // 获取卡片的分类
+
+                let matchesSearch = (fontName.indexOf(filterText) > -1);
+                let matchesCategory = (currentCategory === "全部" || cardCategory === currentCategory);
+
+                if (matchesSearch && matchesCategory) {
+                    card.classList.remove('hidden');
+                    displayedCount++;
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            // 更新显示的字体数量
+            document.getElementById('displayedFontCount').textContent = displayedCount;
+        }
+    </script>
+
+</body>
+</html>
+
