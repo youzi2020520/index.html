@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>版权声明 - 三叶草字库 (模仿版)</title>
+    <link rel="stylesheet" href="imitation-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="imitation-header">
+        <div class="header-content">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo.png" alt="三叶草字库 Logo" class="header-logo">
+                三叶草字库
+            </a>
+            </div>
+    </header>
+<div class="header-spacer"></div>
+    <div class="detail-page-container">
+        
+        <h1 class="detail-title">思源黑体-简体中文</h1>
+          
+          <div class="detail-content-wrapper">
+              
+              <aside class="detail-sidebar">
+                  <div class="font-nav">
+                      <h3>字体导航</h3>
+                      <ul>
+                          <li><a href="#font-info" class="active">字体简介</a></li>
+                          <li><a href="#font-preview">字体展示</a></li>
+                          <li><a href="#license-info">授权说明</a></li>
+                      </ul>
+                  </div>
+              </aside>
+              
+              <main class="font-main-content">
+                  
+                  <section id="font-info" class="detail-section">
+                      <h2>字体简介</h2>
+                      <p class="description-text">思源黑体 (Source Han Sans/Noto Sans CJK) 是 Adobe 与 Google 合作开发的一款字体家族，共包含 7 种字重 (UltraLight, Light, Normal, Regular, Medium, Bold 和 Heavy)。它旨在为中文、日文、韩文以及拉丁文提供统一、高质量的字体支持，是设计师和开发者的首选免费商用字体之一。</p>
+                  </section>
+                  
+                  <section id="font-preview" class="detail-section">
+                      <h2>字体展示</h2>
+                      <div class="main-preview-container" style="text-align: center;">
+                          <img src="images/detail-preview-02.jpg" alt="字体预览图" class="detail-preview-img" style="max-width: 100%; height: auto; border: 1px solid #ccc; border-radius: 8px;">
+                      </div>
+                  </section>
+                  
+                  <section id="license-info" class="detail-section">
+                      <h2>版权说明</h2>
+                      <p class="license-p">These lines are licensed under the <a href="#" target="_blank">Open Font License</a>.</p>
+                      <p class="license-p">You can use them in your products & projects - print or digital, commercial or otherwise.</p>
+                      <p class="license-p">This isn't legal advice, please consider consulting a lawyer and view the full license for all details.</p>
+                      <div class="full-char-set">
+                      </div>
+                  </section>
+                  
+              </main>
+
+              <aside class="detail-info-card">
+                  <div class="info-card">
+                      <h3>字体信息</h3>
+                      <div class="info-item">
+                          <span class="label">授权类型</span>
+                          <span class="value">开源可商用 (OFL)</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">文件大小</span>
+                          <span class="value">16.3MB</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">支持格式</span>
+                          <span class="value">OTF, TTF</span>
+                      </div>
+                      <a href="https://pan.baidu.com/share/init?surl=3eYlyLJc-SfKmVeBr354Ng&pwd=ehy4" class="download-button" target="_blank">
+                          <span class="download-icon">↓</span> 百度网盘
+                      </a>
+                      
+                      <a href="https://pan.quark.cn/s/ba9a23e36516#/list/share" class="download-button quark-button" target="_blank">
+                          <span class="download-icon">↓</span> 夸克下载
+                      </a>
+                  </div>
+                  
+                  <div class="related-fonts">
+                     
+                  </div>
+              </aside>
+              
+          </div>
+        
+    </div>
+
+    <footer class="imitation-footer">
+        <p>© 2025 三叶草字库. All rights reserved.</p>
+        <p class="footer-note">免费可商用字体聚合平台 | 仅供学习交流</p>
+    </footer>
+    
+    <script>
+        // 导航栏滚动透明效果
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.querySelector('.imitation-header');
+            
+            // 监听滚动事件
+            window.addEventListener('scroll', () => {
+                // 当页面滚动超过50px时，添加scrolled类
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        });
+    </script>
+    
+    <script>
+        // 字体导航点击交互
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.font-nav a');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // 移除所有链接的active类
+                    navLinks.forEach(navLink => {
+                        navLink.classList.remove('active');
+                    });
+                    
+                    // 给当前点击的链接添加active类
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+    <script src="font_loader.js"></script>
+</body>
+</html>

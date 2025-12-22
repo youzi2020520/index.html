@@ -1,0 +1,36 @@
+[
+  {
+    "id": "siyuanhei",
+    "title": "思源黑体-简体中文",
+    "previewImg": "images/font-si-yuan-hei.webp",
+    "description": "思源黑体（Source Han Sans）是 Adobe 和 Google 共同开发的开源泛中日韩字体。它包含了七种字重，支持简体中文、繁体中文、日文和韩文，是设计和开发中非常受欢迎的一款免费商用字体。",
+    "licenseType": "开源可商用 (OFL)",
+    "fileSize": "16.3MB",
+    "formats": "OTF, TTF",
+    "baiduLink": "https://pan.baidu.com/share/init?surl=3eYlyLJc-SfKmVeBr354Ng&pwd=ehy4",
+    "quarkLink": "#" 
+  },
+  {
+    "id": "deyizihei",
+    "title": "得意黑 (Smiley Sans)",
+    "previewImg": "images/font-di-yi-hei.webp",
+    "description": "得意黑是一款风格独特的免费可商用中文手写体，笔画粗细对比鲜明，充满设计感和活力，适合用于标题和海报设计。",
+    "licenseType": "开源可商用 (OFL)",
+    "fileSize": "12.5MB",
+    "formats": "TTF, WOFF2",
+    "baiduLink": "https://pan.baidu.com/share/init?surl=XXXXXXXX&pwd=YYYYY",
+    "quarkLink": "#" 
+  },
+  {
+    "id": "puhuiti",
+    "title": "阿里巴巴普惠体 2.0",
+    "previewImg": "images/font-pu-hui-ti.webp",
+    "description": "阿里巴巴普惠体 2.0 版本在原有的基础上进行了优化，笔画更加精简有力，适用于多种场景，是阿里巴巴旗下的免费可商用字体。",
+    "licenseType": "免费可商用 (企业授权)",
+    "fileSize": "18.8MB",
+    "formats": "TTF, OTF",
+    "baiduLink": "https://pan.baidu.com/share/init?surl=AAAAAAAA&pwd=BBBBB",
+    "quarkLink": "#" 
+  }
+  // 您可以在这里继续添加更多字体的数据...
+]
